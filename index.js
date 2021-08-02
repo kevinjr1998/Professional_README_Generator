@@ -29,9 +29,7 @@ const questions = [{
         type: "list",
         name: "license", 
         message: "Choose your License: ", 
-        choices: ["MIT", "Boost Software License 1.0", "Mozilla Public License 2.0", "GNU AGPLv3"],
-    
-    
+        choices: ["MIT", "Boost Software License 1.0", "Mozilla Public License 2.0", "GNU AGPL v3"],
     },
     {
         type: "input",
