@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown');
 const fs = require("fs");
 
 // TODO: Create an array of questions for user input
@@ -29,7 +29,7 @@ const questions = [{
         type: "list",
         name: "license", 
         message: "Choose your License: ", 
-        choices: ["MIT", "Boost Software License 1.0", "Mozilla Public License 2.0", "GNU AGPL v3"],
+        choices: ["MIT", "Boost Software License 1.0", "Mozilla Public License 2.0", "GNU AGPL v3", "None"],
     },
     {
         type: "input",
@@ -52,7 +52,10 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    fs.appendFile(fileName,  generateMarkdown(data), (err) =>
+    err ? console.error(err) : console.log('Success! File saved!'));
+    console.log("");
+    return;
 }
 
 // TODO: Create a function to initialize app
@@ -63,6 +66,8 @@ function init() {
          .then((answers) => {
              
             console.log(answers);
+            writeToFile(`README.md`, answers);
+        
 
     
   })

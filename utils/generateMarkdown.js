@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
       return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
     case "GNU AGPL v3":
       return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
-    default:
+    case "None":
       return "" ;
   }
 }
@@ -27,7 +27,7 @@ function renderLicenseLink(license) {
       return "https://opensource.org/licenses/MPL-2.0";
     case "GNU AGPL v3":
       return "https://www.gnu.org/licenses/agpl-3.0";
-    default:
+    case "None":
       return "" ;
   }
 }
@@ -38,7 +38,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== ""){
  ` ## License  
-  (${renderLicenseBadge(license)})${renderLicenseLink(license)}] ${data.license}}
+  (${renderLicenseBadge(license)})${renderLicenseLink(license)}] ${license}}
   `
   }
 }
@@ -55,8 +55,9 @@ function generateMarkdown(data) {
   - [Credits](#credits)
   - [License](#license)
 
-  ## Installation    
-  ${data.projectInstall}    
+  ## Installation 
+     
+  ${data.projectInstall}
 
   ## Usage
   [link to demonstration](${data.exampleLink})
@@ -64,7 +65,7 @@ function generateMarkdown(data) {
   ## Credits    
   ${data.members}    
   
-  ${renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
 
   ## Tests    
   ${data.testInstruct}    
@@ -72,6 +73,7 @@ function generateMarkdown(data) {
   ## Contact
   ${data.contactInfo}    
 
+  
 `;
 }
 
