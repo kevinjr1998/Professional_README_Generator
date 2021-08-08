@@ -66,6 +66,7 @@ ${data.projectDesc}
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Questions](#questions)
 ${projectLicense.licenseLink}
 
 
@@ -76,15 +77,17 @@ ${data.projectInstall}
 [link to demonstration](${data.exampleLink})
 
 ## Credits    
-${data.members}    
+https://github.com/${data.members}    
   
 ${projectLicense.coveredUnder}
 
 ## Tests    
 ${data.testInstruct}    
 
-## Contact
-${data.contactInfo}    
+## Questions
+https://github.com/${data.members}
+
+For further questions, please contact me at ${data.contactInfo}    
 `;
 }
 

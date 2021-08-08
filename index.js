@@ -7,22 +7,22 @@ const fs = require("fs");
 // TODO: Create an array of questions for user input
 const questions = [{
         type: "input",
-        question: "Name of Project?",
+        message: "Name of Project?",
         name: "projectName",
     }, 
     {
        type: "input",
-       question: "Please enter a description of your project:",
+       message: "Please enter a description of your project:",
        name: "projectDesc",
     },
     {
         type: "input",
-        question: "How do I install this project?",
+        message: "How do I install this project?",
         name: "projectInstall",
     },
     {
         type: "input",
-        question: "Example of project in action? (Paste a link to a video of this project in action)",
+        message: "Example of project in action? (Paste a link to a video of this project in action)",
         name: "exampleLink"
     },
     {
@@ -33,18 +33,18 @@ const questions = [{
     },
     {
         type: "input",
-        question: "Who are the contibuting members?",
+        message: "Who are the contibuting members?",
         name: "members",
     },
     {
         type: "input",
-        question: "Test Instructions?",
+        message: "Test Instructions?",
         name: "testInstruct"
 
     },
     {
         type: "input",
-        question: "Where can I be contacted for questions?",
+        message: "Where can you be contacted for questions?",
         name: "contactInfo",
    }
     
@@ -65,7 +65,7 @@ function init() {
         .prompt(questions)
          .then((answers) => {
              
-            console.log(answers);
+            // console.log(answers);
             writeToFile(`README.md`, answers);
         
 
